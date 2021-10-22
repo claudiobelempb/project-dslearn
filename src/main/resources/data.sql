@@ -18,3 +18,7 @@ INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 2);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 1);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 2);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 3);
+
+--tb_course
+INSERT INTO tb_course (name, img_uri, img_gray_uri) VALUES ('Bootcamp HTML', 'https://img.youtube.com/vi/yWE4L1Oa1AU/0
+.jpg', 'http://coursestock.com/assets/frontend/default/img/course_thumbnail_placeholder.jpg');
