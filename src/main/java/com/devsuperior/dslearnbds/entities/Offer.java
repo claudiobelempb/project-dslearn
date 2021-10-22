@@ -18,13 +18,18 @@ public class Offer implements Serializable {
   private Instant startMoment;
   private Instant endMoment;
 
+  @ManyToOne
+  @JoinColumn(name = "course_id")
+  private Course course;
+
   public Offer(){}
 
-  public Offer(Long id, String edition, Instant startMoment, Instant endMoment) {
+  public Offer(Long id, String edition, Instant startMoment, Instant endMoment, Course course) {
     this.id = id;
     this.edition = edition;
     this.startMoment = startMoment;
     this.endMoment = endMoment;
+    this.course = course;
   }
 
   public Long getId() {
@@ -57,6 +62,14 @@ public class Offer implements Serializable {
 
   public void setEndMoment(Instant endMoment) {
     this.endMoment = endMoment;
+  }
+
+  public Course getCourse() {
+    return course;
+  }
+
+  public void setCourse(Course course) {
+    this.course = course;
   }
 
   @Override
