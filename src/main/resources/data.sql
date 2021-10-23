@@ -35,3 +35,6 @@ INSERT INTO tb_offer (edition, start_moment, end_moment, course_id) VALUES ('2.0
 INSERT INTO tb_resource (title, description, position, img_uri, type, external_link, offer_id) VALUES ('title 1', 'description 1', 1,'img_uri 1', 1, 'external_link 1', 1);
 INSERT INTO tb_resource (title, description, position, img_uri, type, external_link, offer_id) VALUES ('title 2', 'description 2', 2,'img_uri 2', 2, 'external_link 2', 2);
 
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('title 1', 'description 1', 1,'img_uri 1', 1, null);
+INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('title 2', 'description 2', 1,'img_uri 2', 1, 1);
+
