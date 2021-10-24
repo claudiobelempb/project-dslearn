@@ -1,4 +1,6 @@
-package com.devsuperior.dslearnbds.entities;
+package com.devsuperior.dslearnbds.modules.section.entities;
+
+import com.devsuperior.dslearnbds.modules.resource.entities.Resource;
 
 import javax.persistence.*;
 import java.io.Serializable;

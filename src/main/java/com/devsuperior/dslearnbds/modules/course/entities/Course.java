@@ -1,4 +1,4 @@
-package com.devsuperior.dslearnbds.entities;
+package com.devsuperior.dslearnbds.modules.course.entities;
 
 import com.devsuperior.dslearnbds.modules.offer.entities.Offer;
 

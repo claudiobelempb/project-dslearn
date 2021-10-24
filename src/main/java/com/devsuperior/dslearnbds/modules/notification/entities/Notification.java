@@ -1,4 +1,4 @@
-package com.devsuperior.dslearnbds.entities;
+package com.devsuperior.dslearnbds.modules.notification.entities;
 
 import com.devsuperior.dslearnbds.modules.user.entities.User;
 

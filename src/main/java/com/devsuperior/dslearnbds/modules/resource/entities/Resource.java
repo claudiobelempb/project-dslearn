@@ -1,6 +1,7 @@
-package com.devsuperior.dslearnbds.entities;
+package com.devsuperior.dslearnbds.modules.resource.entities;
 
 import com.devsuperior.dslearnbds.modules.offer.entities.Offer;
+import com.devsuperior.dslearnbds.modules.section.entities.Section;
 import com.devsuperior.dslearnbds.shared.enums.ResourceType;
 
 import javax.persistence.*;
