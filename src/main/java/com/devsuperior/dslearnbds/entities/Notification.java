@@ -1,5 +1,7 @@
 package com.devsuperior.dslearnbds.entities;
 
+import com.devsuperior.dslearnbds.modules.user.entities.User;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;

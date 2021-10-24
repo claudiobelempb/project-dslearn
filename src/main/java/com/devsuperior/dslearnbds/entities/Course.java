@@ -1,5 +1,7 @@
 package com.devsuperior.dslearnbds.entities;
 
+import com.devsuperior.dslearnbds.modules.offer.entities.Offer;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;

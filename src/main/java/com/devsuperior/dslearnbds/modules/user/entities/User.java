@@ -1,4 +1,7 @@
-package com.devsuperior.dslearnbds.entities;
+package com.devsuperior.dslearnbds.modules.user.entities;
+
+import com.devsuperior.dslearnbds.entities.Notification;
+import com.devsuperior.dslearnbds.entities.Role;
 
 import javax.persistence.*;
 import java.io.Serializable;

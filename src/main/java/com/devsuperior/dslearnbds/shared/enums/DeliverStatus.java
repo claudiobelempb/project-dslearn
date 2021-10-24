@@ -1,4 +1,4 @@
-package com.devsuperior.dslearnbds.enums;
+package com.devsuperior.dslearnbds.shared.enums;
 
 public enum DeliverStatus {
 
