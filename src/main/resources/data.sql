@@ -38,3 +38,8 @@ INSERT INTO tb_resource (title, description, position, img_uri, type, external_l
 INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('title 1', 'description 1', 1,'img_uri 1', 1, null);
 INSERT INTO tb_section (title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('title 2', 'description 2', 1,'img_uri 2', 1, 1);
 
+--tb_enrollment
+INSERT INTO tb_enrollment (enroll_moment, refund_moment, available, only_update, user_id, offer_id) VALUES
+('2020-07-14T10:00:00Z', null, 'true', 'false', 1, 1);
+INSERT INTO tb_enrollment (enroll_moment, refund_moment, available, only_update, user_id, offer_id) VALUES
+('2020-07-14T10:00:00Z', null, 'true', 'false', 2, 1);
