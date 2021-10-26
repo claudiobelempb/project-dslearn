@@ -18,11 +18,6 @@ public class Content extends Lesson implements Serializable {
 
   public Content(){}
 
-  public Content(String textContent, String videoUri) {
-    this.textContent = textContent;
-    this.videoUri = videoUri;
-  }
-
   public Content(Long id, String title, Integer position, Section section, String textContent, String videoUri) {
     super(id, title, position, section);
     this.textContent = textContent;

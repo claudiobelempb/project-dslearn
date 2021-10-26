@@ -2,6 +2,7 @@ package com.devsuperior.dslearnbds.modules.offer.entities;
 
 import com.devsuperior.dslearnbds.modules.course.entities.Course;
 import com.devsuperior.dslearnbds.modules.resource.entities.Resource;
+import com.devsuperior.dslearnbds.modules.topic.entities.Topic;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -31,6 +32,9 @@ public class Offer implements Serializable {
 
   @OneToMany(mappedBy = "offer")
   private final List<Resource> resources = new ArrayList<>();
+
+  @OneToMany(mappedBy = "offer")
+  private final List<Topic> topics = new ArrayList<>();
 
   public Offer(){}
 

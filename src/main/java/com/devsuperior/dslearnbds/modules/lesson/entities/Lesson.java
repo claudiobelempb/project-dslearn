@@ -1,19 +1,17 @@
 package com.devsuperior.dslearnbds.modules.lesson.entities;
 
+import com.devsuperior.dslearnbds.modules.deliver.entities.Deliver;
 import com.devsuperior.dslearnbds.modules.enrollment.entities.Enrollment;
 import com.devsuperior.dslearnbds.modules.section.entities.Section;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "tb_lesson")
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Lesson implements Serializable {
-
   private static final long serialVersionUID = 1L;
 
   @Id
@@ -26,18 +24,24 @@ public abstract class Lesson implements Serializable {
   @JoinColumn(name = "section_id")
   private Section section;
 
+  @OneToMany(mappedBy = "lesson")
+  private final List<Deliver> deliveries = new ArrayList<>();
+
   @ManyToMany
-  @JoinTable(name = "tb_lesson_done",
+  @JoinTable(name = "tb_lessons_done",
     joinColumns = @JoinColumn(name = "lesson_id"),
     inverseJoinColumns = {
-    @JoinColumn(name = "user_id"),
-    @JoinColumn(name = "offer_id")}
+      @JoinColumn(name = "user_id"),
+      @JoinColumn(name = "offer_id")
+    }
   )
   private final Set<Enrollment> enrollmentsDone = new HashSet<>();
 
-  public Lesson(){}
+  public Lesson() {
+  }
 
   public Lesson(Long id, String title, Integer position, Section section) {
+    super();
     this.id = id;
     this.title = title;
     this.position = position;
@@ -79,6 +83,11 @@ public abstract class Lesson implements Serializable {
   public Set<Enrollment> getEnrollmentsDone() {
     return enrollmentsDone;
   }
+
+  public List<Deliver> getDeliveries() {
+    return deliveries;
+  }
+
 
   @Override
   public boolean equals(Object o) {

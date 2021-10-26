@@ -7,7 +7,6 @@ import java.util.Objects;
 @Entity
 @Table(name = "tb_role")
 public class Role implements Serializable {
-
   private static final long serialVersionUID = 1L;
 
   @Id
@@ -15,9 +14,11 @@ public class Role implements Serializable {
   private Long id;
   private String authority;
 
-  public Role(){}
+  public Role() {
+  }
 
   public Role(Long id, String authority) {
+    super();
     this.id = id;
     this.authority = authority;
   }
@@ -37,6 +38,7 @@ public class Role implements Serializable {
   public void setAuthority(String authority) {
     this.authority = authority;
   }
+
 
   @Override
   public boolean equals(Object o) {

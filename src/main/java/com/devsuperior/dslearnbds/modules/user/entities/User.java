@@ -1,6 +1,7 @@
 package com.devsuperior.dslearnbds.modules.user.entities;
 
 import com.devsuperior.dslearnbds.modules.notification.entities.Notification;
+import com.devsuperior.dslearnbds.modules.Reply.entities.Reply;
 import com.devsuperior.dslearnbds.modules.role.entities.Role;
 
 import javax.persistence.*;
@@ -10,7 +11,6 @@ import java.util.*;
 @Entity
 @Table(name = "tb_user")
 public class User implements Serializable {
-
   private static final long serialVersionUID = 1L;
 
   @Id
@@ -27,11 +27,13 @@ public class User implements Serializable {
   private Set<Role> roles = new HashSet<>();
 
   @OneToMany(mappedBy = "user")
-  private final List<Notification> notifications = new ArrayList<>();
+  private List<Notification> notifications = new ArrayList<>();
 
-  public User(){}
+  public User() {
+  }
 
   public User(Long id, String name, String email, String password) {
+    super();
     this.id = id;
     this.name = name;
     this.email = email;
@@ -72,10 +74,6 @@ public class User implements Serializable {
 
   public Set<Role> getRoles() {
     return roles;
-  }
-
-  public void setRoles(Set<Role> roles) {
-    this.roles = roles;
   }
 
   public List<Notification> getNotifications() {
