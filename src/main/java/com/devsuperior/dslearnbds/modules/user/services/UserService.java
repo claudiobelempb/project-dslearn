@@ -25,6 +25,9 @@ public class UserService implements UserDetailsService {
   @Autowired
   private UserRepository userRepository;
 
+  @Autowired
+  private UserAuthService userAuthService;
+
   @Transactional(readOnly = true)
   public Page<UserDTO> index(Pageable pageable) {
     Page<User> users = userRepository.findAll(pageable);
@@ -33,6 +36,9 @@ public class UserService implements UserDetailsService {
 
   @Transactional(readOnly = true)
   public UserDTO show(Long id) {
+
+    userAuthService.validateSelfOrAdmin(id);
+
     Optional<User> obj = userRepository.findById(id);
     User user = obj.orElseThrow(() -> new ResourceNotFoundException("User not found!"));
     return new UserDTO(user);
