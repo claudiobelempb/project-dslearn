@@ -1,7 +1,9 @@
 package com.devsuperior.dslearnbds.shared.exceptions.resources;
 
 import com.devsuperior.dslearnbds.shared.exceptions.services.DataBaseException;
+import com.devsuperior.dslearnbds.shared.exceptions.services.ForbiddenException;
 import com.devsuperior.dslearnbds.shared.exceptions.services.ResourceNotFoundException;
+import com.devsuperior.dslearnbds.shared.exceptions.services.UnauthorizedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -58,5 +60,21 @@ public class ResourceExceptionHandler implements Serializable {
     }
 
     return ResponseEntity.status(status).body(err);
+  }
+
+  @ExceptionHandler(ForbiddenException .class)
+  public ResponseEntity<OAuthCustomError> forbidden(ForbiddenException e, HttpServletRequest request) {
+
+    OAuthCustomError customError = new OAuthCustomError("Forbidden", e.getMessage());
+
+    return ResponseEntity.status(HttpStatus.FORBIDDEN).body(customError);
+  }
+
+  @ExceptionHandler(UnauthorizedException.class)
+  public ResponseEntity<OAuthCustomError> unauthorized(UnauthorizedException e, HttpServletRequest request) {
+
+    OAuthCustomError customError = new OAuthCustomError("Unauthorized", e.getMessage());
+
+    return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(customError);
   }
 }
