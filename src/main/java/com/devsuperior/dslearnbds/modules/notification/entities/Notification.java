@@ -63,7 +63,7 @@ public class Notification implements Serializable {
     this.read = read;
   }
 
-  public Boolean getRead() {
+  public Boolean isRead() {
     return read;
   }
 
